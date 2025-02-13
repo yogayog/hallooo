@@ -1,0 +1,176 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fce4ec;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 3em;
+    color: #ff4081;
+    margin-bottom: 20px;
+    animation: fadeInTop 2s ease-out;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #333;
+    animation: fadeInTop 3s ease-out;
+}
+
+.heart-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4081;
+    position: relative;
+    animation: heartBeat 1s infinite alternate;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ff4081;
+}
+
+.heart::before {
+    left: 50px;
+    top: 0;
+}
+
+.heart::after {
+    left: 0;
+    top: 50px;
+}
+
+.heart-2 {
+    animation-delay: 0.5s;
+}
+
+.heart-3 {
+    animation-delay: 1s;
+}
+
+.quote p {
+    font-size: 1.5em;
+    color: #ff4081;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.quote p:last-child {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.button-container {
+    margin-top: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ff4081;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3366;
+    transform: scale(1.05);
+}
+
+#extraMessage {
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 20px;
+    font-style: italic;
+    display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 1em;
+    color: #ff4081;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .quote p {
+        font-size: 1em;
+    }
+
+    .button-container button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+}
